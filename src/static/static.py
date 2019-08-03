@@ -18,21 +18,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import inspect
-# hack
-import types
-import gc
 
-
-
-def local_var(*args, **kwargs):
+def local_var(fn, *args, **kwargs):
     """
     Creates a static local variable in the calling function's scope.
 
     >>> import static
     >>> def foo():
     ...     x = 1
-    ...     static.local_var(y=3,z=6)
+    ...     static.local_var(fn=foo, y=3,z=6)
     ...     x = x + 1
     ...     foo.y = foo.y+1
     ...     foo.z = foo.z+1
@@ -47,13 +41,6 @@ def local_var(*args, **kwargs):
     >>> foo()
     (2, 7, 10)
 """
-    # get the caller
-    def _caller_frame_info():
-        previous_frame = inspect.currentframe().f_back.f_back
-        return previous_frame
-    # find the function, given the code object
-    # major hack
-    fn = [o for o in gc.get_referrers(_caller_frame_info().f_code) if isinstance(o, types.FunctionType)][0]
     # set all the bindings on the function itself
     for k,v in kwargs.items():
         try:

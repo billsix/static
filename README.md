@@ -12,7 +12,7 @@ so the state is preserved across muliple applications of the function.
 >>> import static
 >>> def foo():
 ...     x = 1
-...     static.local_var(y=3,z=6)
+...     static.local_var(fn=foo, y=3,z=6)
 ...     x = x + 1
 ...     foo.y = foo.y+1
 ...     foo.z = foo.z+1
