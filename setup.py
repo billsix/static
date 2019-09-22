@@ -2,7 +2,7 @@ from setuptools import setup, Extension
 
 
 setup (name = 'staticlocal',
-       version = '0.0.1',
+       version = '0.0.2',
        description = 'An implementation of static local variables, as familiar from C',
        author = 'William Emerison Six',
        author_email = 'billsix@gmail.com',
