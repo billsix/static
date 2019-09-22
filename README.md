@@ -1,4 +1,4 @@
-static
+staticlocal
 
 Python implementation of static local variables.
 
@@ -9,7 +9,7 @@ so the state is preserved across muliple applications of the function.
 
 
 ```python
->>> import static
+>>> import staticlocal
 >>> def foo():
 ...     x = 1
 ...     staticlocal.var(fn=foo, y=3,z=6)
