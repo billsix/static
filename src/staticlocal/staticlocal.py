@@ -19,14 +19,14 @@
 # SOFTWARE.
 
 
-def local_var(fn, *args, **kwargs):
+def var(fn, *args, **kwargs):
     """
     Creates a static local variable in the calling function's scope.
 
-    >>> import static
+    >>> import staticlocal
     >>> def foo():
     ...     x = 1
-    ...     static.local_var(fn=foo, y=3,z=6)
+    ...     staticlocal.var(fn=foo, y=3,z=6)
     ...     x = x + 1
     ...     foo.y = foo.y+1
     ...     foo.z = foo.z+1

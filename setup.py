@@ -1,16 +1,16 @@
 from setuptools import setup, Extension
 
 
-setup (name = 'static',
+setup (name = 'staticlocal',
        version = '0.0.1',
        description = 'An implementation of static local variables, as familiar from C',
        author = 'William Emerison Six',
        author_email = 'billsix@gmail.com',
-       url = 'https://github.com/billsix/static',
-       keywords = "static",
+       url = 'https://github.com/billsix/staticlocal',
+       keywords = "staticlocal",
        license = "MIT",
-       packages=['static'],
-       package_dir={'static': 'src/static'},
+       packages=['staticlocal'],
+       package_dir={'staticlocal': 'src/staticlocal'},
        classifiers=[
            "Development Status :: 3 - Alpha",
            "Topic :: Utilities",
